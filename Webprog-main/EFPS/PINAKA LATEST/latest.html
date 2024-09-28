@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .homepage { 
+        background-color: #fff; 
+        display: flex; 
+        flex-direction: column; 
+        overflow: hidden; 
+    }
+    .main-container { 
+        background-color: #f5f5f5; 
+        width: 100%; 
+    }
+    @media (max-width: 991px) { .main-container {
+    max-width: 100%; 
+     }  
+    }
+    .content-wrapper { 
+        gap: 20px; 
+        display: flex; 
+    }
+    @media (max-width: 991px) { .content-wrapper { 
+        flex-direction: column; 
+        align-items: stretch; 
+        gap: 0; 
+     } 
+    }
+    .left-column { 
+        display: flex; 
+        flex-direction: column; 
+        line-height: normal; 
+        width: 50%; 
+        margin-left: 0;      
+    }
+    @media (max-width: 991px) { .left-column { 
+        width: 100%; 
+     }
+    }
+    .left-content { 
+        display: flex; 
+        flex-direction: column; 
+        position: relative; 
+        min-height: 1024px; 
+        width: 100%; 
+        padding: 31px 0 123px;
+    }
+    @media (max-width: 991px) { .left-content { 
+        max-width: 100%; 
+        margin-top: 40px; 
+        padding-bottom: 100px; } 
+    }
+    .background-image { 
+        position: absolute; 
+        inset: 0; 
+        height: 100%; 
+        width: 100%; 
+        object-fit: cover; 
+        object-position: center;
+    }
+    .header-content { 
+        position: relative; 
+        display: flex; 
+        flex-direction: column; 
+        align-items: start; 
+        padding: 0 80px 0 33px; 
+    }
+    @media (max-width: 991px) { .header-content { 
+        max-width: 100%; 
+        padding: 0 20px; } 
+    }
+    .menu-icon { 
+        border-radius: 20px; 
+        background-color: #d9d9d9; 
+        display: flex; 
+        width: 73px; 
+        flex-direction: column; 
+        padding: 17px 9px; 
+    }
+    .menu-line { 
+        border-radius: 10px; 
+        background-color: #ff5c00; 
+        display: flex; 
+        height: 5px; 
+        margin-top: 10px; 
+    }
+    .menu-line:first-child { 
+        margin-top: 0; 
+    }
+    .efps-title { 
+        color: #fff; 
+        align-self: center; 
+        margin-top: 195px; 
+        font: 400 195px Konkhmer Sleokchher, -apple-system, Roboto, Helvetica, sans-serif; 
+    }
+    @media (max-width: 991px) { .efps-title { 
+        max-width: 100%; 
+        margin-top: 40px; 
+        font-size: 40px; } 
+    }
+    .announcement-text { 
+        color: #d9d9d9; 
+        margin: 39px 0 0 46px; 
+        font: 700 32px Gentium Basic, sans-serif; 
+    }
+    @media (max-width: 991px) { .announcement-text { 
+        margin-left: 10px; } 
+    }
+    .announcement-container { 
+        position: relative; 
+        display: flex; 
+        align-items: start; 
+        gap: 20px; 
+        color: #fff; 
+        letter-spacing: -0.48px; 
+        flex-wrap: wrap; 
+        justify-content: space-between; 
+        margin: 26px 16px 0 15px; font: 400 24px/28px Gentium Basic, -apple-system, Roboto, Helvetica, sans-serif; 
+    }
+    @media (max-width: 991px) { .announcement-container { 
+        max-width: 100%; margin-right: 10px; } 
+    }
+    .arrow-icon { 
+        aspect-ratio: 0.5; 
+        object-fit: contain; 
+        object-position: center; 
+        width: 9px; 
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); 
+        margin-top: 44px; }
+    @media (max-width: 991px) { .arrow-icon { 
+        margin-top: 40px; } 
+    }
+    .announcement-content { 
+        align-self: stretch; 
+        display: flex; 
+        flex-direction: column; 
+    }
+    @media (max-width: 991px) { .announcement-content { 
+        max-width: 100%; } 
+    }
+    .announcement-text-content {
+        max-width: 100%; 
+    }
+    .more-icon { 
+        aspect-ratio: 4.5; 
+        object-fit: contain; 
+        object-position: center; 
+        width: 54px; align-self: center; 
+        margin-top: 20px; 
+    }
+    .right-column { 
+        display: flex; 
+        flex-direction: column; 
+        line-height: normal; 
+        width: 50%; 
+        margin-left: 20px; 
+    }
+    @media (max-width: 991px) { .right-column { 
+        width: 100%; } 
+    }
+    .right-content { 
+        display: flex; 
+        width: 100%; 
+        flex-direction: column; 
+    }
+    @media (max-width: 991px) { .right-content { 
+        max-width: 100%; margin-top: 40px; } 
+    }
+    .bir-main-container { 
+        max-width: 100%; 
+    }
+    .bir-main-content { 
+        gap: 20px; 
+        display: flex; 
+    }
+    @media (max-width: 991px) { .bir-main-content { 
+        flex-direction: column; 
+        align-items: stretch; gap: 0; } 
+    }
+    .bir-main-text-column { 
+        display: flex; flex-direction: column; 
+        line-height: normal; width: 45%; 
+        margin-left: 0; 
+    }
+    @media (max-width: 991px) { .bir-main-text-column { 
+        width: 100%; } 
+    }
+    .bir-main-text { 
+        border-radius: 30px; 
+        background-color: #0034ab; 
+        margin-top: 176px; 
+        flex-grow: 1; color: #fff; 
+        width: 100%; 
+        padding: 5px 35px 18px; 
+        font: 700 30px Gentium Book Basic, -apple-system, Roboto, Helvetica, sans-serif; 
+    }
+    @media (max-width: 991px) { .bir-main-text {
+         margin-top: 40px; 
+         padding: 0 20px; } 
+    }
+    .bir-main-image-column { 
+        display: flex; 
+        flex-direction: column; 
+        line-height: normal; 
+        width: 55%; 
+        margin-left: 20px; 
+    }
+    @media (max-width: 991px) { .bir-main-image-column { 
+        width: 100%; } 
+    }
+    .bir-main-image { 
+        aspect-ratio: 1.29; 
+        object-fit: contain; 
+        object-position: center; 
+        width: 100%; 
+    }
+    @media (max-width: 991px) { .bir-main-image { 
+        margin-top: 40px; } 
+    }
+    .login-form { 
+        display: flex; 
+        margin-top: 44px; 
+        width: 100%; 
+        flex-direction: column; 
+        align-items: start; 
+        color: #5c5c5c; 
+        padding: 0 80px 0 8px;
+        font: 400 20px Geologica, sans-serif; 
+    }
+    @media (max-width: 991px) { .login-form { 
+        max-width: 100%; 
+        padding-right: 20px; 
+        margin-top: 40px; } 
+    }
+    .login-title { 
+        color: #000; 
+        font-size: 32px; 
+    }
+    .tin-label { 
+        margin-top: 53px; }
+    @media (max-width: 991px) { .tin-label { 
+        margin: 40px 0 0 2px; } 
+    }
+    .tin-input-group { 
+        display: flex; 
+        margin-top: 4px; gap: 5px; 
+        white-space: nowrap; 
+        flex-wrap: wrap; 
+    }
+    @media (max-width: 991px) { .tin-input-group { 
+        white-space: initial; } 
+    }
+    .tin-input { 
+        border-radius: 13px; 
+        background-color: #d9d9d9;
+        display: flex; 
+        width: 121px; 
+        height: 41px; 
+    }
+    .tin-separator { 
+        margin: auto 0; 
+    }
+    .username-label { 
+        color: #464646; 
+        margin-top: 44px; 
+    }
+    @media (max-width: 991px) { .username-label { 
+        margin: 40px 0 0 3px; } 
+    }
+    .username-input { 
+        border-radius: 14px; 
+        background-color: #d9d9d9; 
+        display: flex; 
+        margin-top: 9px; 
+        width: 539px; 
+        max-width: 100%; 
+        height: 41px; 
+    }
+    .password-label { 
+        margin-top: 46px; 
+    }
+    @media (max-width: 991px) { .password-label { 
+        margin: 40px 0 0 3px; } 
+    }
+    .password-input { 
+        border-radius: 14px; 
+        background-color: #d9d9d9; 
+        display: flex; 
+        margin-top: 4px; 
+        width: 541px; 
+        max-width: 100%; 
+        height: 41px; 
+    }
+    .login-button { 
+        border-radius: 30px; 
+        background-color: #ff5c00; 
+        margin-top: 75px; 
+        width: 539px; 
+        max-width: 100%; 
+        font-size: 32px; 
+        color: #fff; 
+        font-weight: 700; 
+        padding: 4px 70px 4px 84px; 
+    }
+    @media (max-width: 991px) { .login-button { 
+        margin-top: 40px; 
+        padding: 0 20px; } 
+    }
+    .login-links { 
+        color: #a89f9f; 
+        margin: 44px 0 0 63px; 
+    }
+    @media (max-width: 991px) { .login-links { 
+        margin: 40px 0 0 10px; } 
+    }
+    .visually-hidden { 
+        position: absolute; 
+        width: 1px; 
+        height: 1px; 
+        padding: 0; 
+        margin: -1px; 
+        overflow: hidden; 
+        clip: rect(0, 0, 0, 0); 
+        white-space: nowrap; 
+        border: 0; 
+    }
+    </style>
+    <body>
+    <section class="homepage">
+      <div class="main-container">
+        <div class="content-wrapper">
+          <div class="left-column">
+            <div class="left-content">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/b8e8e6a7ad106fdd39cee52be8e39d7841a74c4d7483a4cba46b1f4304c0b134?placeholderIfAbsent=true&apiKey=a03d5776a03842ee9b90dd75cfe37192" alt="" class="background-image" />
+              <header class="header-content">
+                <nav class="menu-icon">
+                  <div class="menu-line"></div>
+                  <div class="menu-line"></div>
+                  <div class="menu-line"></div>
+                </nav>
+                <h1 class="efps-title">EFPS</h1>
+                <h2 class="announcement-text">Announcement</h2>
+              </header>
+              <div class="announcement-container">
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f7eba5fc8e74a3bdcc98c5f09f381f39e2dd403228f21e819e7aad20c4cb386a?placeholderIfAbsent=true&apiKey=a03d5776a03842ee9b90dd75cfe37192" alt="Left arrow" class="arrow-icon" />
+                <div class="announcement-content">
+                  <p class="announcement-text-content">
+                    <strong><em>Mandatory Designation of Taxpayer's Official Email</em></strong>
+                    <br />
+                    <em>The designation of official e-mail address of the taxpayer is mandatory. It shall be used as an additional manner of serving BIR orders, notices, letters, communications and other processes to the ta...</em>
+                    <a href="https://efps.bir.gov.ph/efps-war/NewsView?MESSAGE=The%20designation%20of%20official%20e-mail%20address%20of%20the%20taxpayer%20is%20mandatory.%20It%20shall%20be%20used%20as%20an%20additional%20manner%20of%20serving%20BIR%20orders,%20notices,%20letters,%20communications%20and%20other%20processes%20to%20the%20taxpayer.%20Service%20through%20this%20official%20e-mail%20address%20shall%20be%20presumed%20valid%20unless%20the%20taxpayer%20promptly%20informs%20BIR%20by%20updating%20his/her/its%20registration%20information%20with%20the%20Bureau." style="text-decoration: underline; font-style: italic" target="_blank">More</a>
+                  </p>
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/79cd649401ef613db1577b1c13775970ddfdf9421a42abf88b666eb2d4803c1d?placeholderIfAbsent=true&apiKey=a03d5776a03842ee9b90dd75cfe37192" alt="Separator" class="more-icon" />
+                </div>
+                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/735a546bace6b3aa97226fac24d6c0ce8174985f790c9e447ddb2517dda256fc?placeholderIfAbsent=true&apiKey=a03d5776a03842ee9b90dd75cfe37192" alt="Right arrow" class="arrow-icon" />
+              </div>
+            </div>
+          </div>
+          <div class="right-column">
+            <div class="right-content">
+              <div class="bir-main-container">
+                <div class="bir-main-content">
+                  <div class="bir-main-text-column">
+                    <div class="bir-main-text">BIR Main</div>
+                  </div>
+                  <div class="bir-main-image-column">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f9fb807edad272ec061792d51edc72432f6b856b4d83e0d4cd74029187af880b?placeholderIfAbsent=true&apiKey=a03d5776a03842ee9b90dd75cfe37192" alt="BIR Main logo" class="bir-main-image" />
+                  </div>
+                </div>
+              </div>
+              <form class="login-form">
+                <h2 class="login-title"><span style="color: #ff6b00;">ePFES</span> Login</h2>
+                <label for="tin" class="tin-label">TIN Number</label>
+                <div class="tin-input-group">
+                  <input type="text" id="tin-1" class="tin-input" aria-label="TIN first part" />
+                  <span class="tin-separator">-</span>
+                  <input type="text" id="tin-2" class="tin-input" aria-label="TIN second part" />
+                  <span class="tin-separator">-</span>
+                  <input type="text" id="tin-3" class="tin-input" aria-label="TIN third part" />
+                  <span class="tin-separator">-</span>
+                  <input type="text" id="tin-4" class="tin-input" aria-label="TIN fourth part" />
+                </div>
+                <label for="username" class="username-label">Username</label>
+                <input type="text" id="username" class="username-input" />
+                <label for="password" class="password-label">Password</label>
+                <input type="password" id="password" class="password-input" />
+                <button type="submit" class="login-button">LOGIN</button>
+                <p class="login-links">
+                  <a href="#forgot-password">Forgot Password?</a> | <a href="#enroll">Enroll to eFPS</a> | <a href="#help">Help</a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</body>
+</html>

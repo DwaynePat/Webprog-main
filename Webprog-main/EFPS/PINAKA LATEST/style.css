@@ -54,7 +54,7 @@
   border-radius: 20px;
   background-color: var(--input-color);
   display: flex;
-  width: 55px;
+  width: 50px;
   flex-direction: column;
   padding: 17px 9px;
   z-index: 99;
@@ -69,23 +69,29 @@
 .menu-line:first-child {
   margin-top: 0;
 }
+.efps-header {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+}
 .efps-title {
   color: var(--text-color-w);
-  align-self: center;
   margin-top: 195px;
   margin-bottom: 0;
-  font: 400 195px "Konkhmer Sleokchher", -apple-system, Roboto, Helvetica,
-    sans-serif;
+  font: 400 195px "Konkhmer Sleokchher", sans-serif;
   opacity: 0.6;
 }
 .efps-caption {
   color: var(--text-color-w);
-  align-self: center;
+  display: flex;
   margin-top: 0;
 }
 .announcement-container {
   display: flex;
   align-self: flex-end;
+  flex-direction: column;
   gap: 1em;
   background-color: rgba(0, 51, 171, 0.32);
   backdrop-filter: blur(6px);
@@ -103,19 +109,27 @@
   margin: 0em 2em;
 }
 .announcement-text {
+  display: flex;
   color: var(--text-color-w);
   font: 700 32px "Gentium Plus", sans-serif;
 }
+.announcement-text-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+}
 .announcement-text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   max-width: 100%;
+  text-align: justify;
 }
 .arrow-icon {
   aspect-ratio: 0.5;
   object-fit: contain;
   object-position: center;
   width: 15px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  margin: 0;
 }
 .more-icon {
   aspect-ratio: 4.5;
@@ -124,6 +138,11 @@
   width: 54px;
   align-self: center;
   margin: 1em 0;
+}
+.separator {
+  display: flex;
+  align-self: center;
+  align-items: flex-end;
 }
 .right-column {
   display: flex;
